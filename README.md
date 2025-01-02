@@ -105,7 +105,7 @@ The ROC curve for the training set has a high AUC value, indicating that the mod
 The ROC curve for the test set is also strong, with an AUC indicating the model retains its ability to classify accurately. The model's ability to distinguish between the classes remains effective even on the test data, demonstrating its generalizability.
 
 ## Insights:
-**Key Features**: The coefficients from the logistic regression model reveal which lifestyle factors are most influential in determining sleep patterns. Factors such as "no beverage" consumption, "north" and "south" sleep directions, and "smoke/drink" habits have higher positive coefficients, suggesting they significantly impact whether a person gets adequate sleep. In contrast, "coffee" consumption has a strongly negative coefficient, indicating it might be a barrier to getting enough sleep.
+**Key Features**: The coefficients from the logistic regression model reveal which lifestyle factors are most influential in determining sleep patterns. Factors such as "no beverage" consumption, and "north" and "south" sleep directions have higher positive coefficients, suggesting they significantly impact whether a person gets adequate sleep. In contrast, "coffee" consumption has a strongly negative coefficient, indicating it might be a barrier to getting enough sleep.
 
 **Model's Predictive Power**: The logistic regression model performed well overall, with high accuracy, precision, recall, and F1 scores, and the ROC curves further validated the model's effectiveness. This suggests that lifestyle factors such as exercise, screen time, and beverage consumption can be strong predictors of sleep quality, providing valuable insights for improving sleep health.
 
