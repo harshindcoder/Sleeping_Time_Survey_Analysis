@@ -72,8 +72,41 @@ Visualizations such as count plots, histograms, and correlation heatmaps are use
 
 ## Regression Analysis
 
-### Linear Regression
-
 ### Logistic Regression
 
-## Conclusion
+We chose to apply Logistic Regression for this analysis because we aimed to predict whether an individual would get adequate sleep (7 hours or more) based on various lifestyle factors. Since the target variable (sleep time) is binary (1 for 7 or more hours, and 0 for less than 7 hours), logistic regression is an appropriate model. Logistic regression is particularly useful for classification tasks like this, where the goal is to estimate the probability of an event occurring, and it works well even with binary outcomes.
+
+#### Model Training and Test Results
+The dataset was split into training and testing sets, with 70% of the data used for training and 30% for testing. The logistic regression model was trained on the training set and then evaluated on both the training and test sets. The evaluation metrics for both the training and test datasets are as follows:
+
+**Training Results**:
+- Accuracy: 87.5%
+- Precision: 88.64%
+- Recall: 92.86%
+- F1 Score: 90.70%
+
+The training results show that the model performs well in predicting whether an individual gets enough sleep. With high precision and recall, the model effectively identifies both true positives (individuals getting enough sleep) and true negatives (individuals not getting enough sleep).
+
+**Test Results**:
+- Accuracy: 85.71%
+- Precision: 83.33%
+- Recall: 93.75%
+- F1 Score: 88.24%
+
+The test results also show strong performance, with a slight drop in accuracy and precision compared to the training set. However, the recall remains high, indicating that the model is particularly good at identifying individuals who do get enough sleep. This suggests the model's ability to generalize well to unseen data.
+
+**ROC Curve and Insights**
+The Receiver Operating Characteristic (ROC) Curve is a valuable tool for assessing the performance of a binary classification model. It illustrates the tradeoff between the true positive rate (sensitivity) and the false positive rate (1 - specificity) across different thresholds. The area under the curve (AUC) provides a single metric that summarizes the model's ability to distinguish between the classes.
+
+**ROC Curve for Training Data**:
+The ROC curve for the training set has a high AUC value, indicating that the model is good at differentiating between individuals who get enough sleep and those who do not. The curve's steep ascent shows a high true positive rate with a low false positive rate, further validating the model's strong performance on the training data.
+
+**ROC Curve for Test Data**:
+The ROC curve for the test set is also strong, with an AUC indicating the model retains its ability to classify accurately. The model's ability to distinguish between the classes remains effective even on the test data, demonstrating its generalizability.
+
+## Insights:
+**Key Features**: The coefficients from the logistic regression model reveal which lifestyle factors are most influential in determining sleep patterns. Factors such as "no beverage" consumption, "north" and "south" sleep directions, and "smoke/drink" habits have higher positive coefficients, suggesting they significantly impact whether a person gets adequate sleep. In contrast, "coffee" consumption has a strongly negative coefficient, indicating it might be a barrier to getting enough sleep.
+
+**Model's Predictive Power**: The logistic regression model performed well overall, with high accuracy, precision, recall, and F1 scores, and the ROC curves further validated the model's effectiveness. This suggests that lifestyle factors such as exercise, screen time, and beverage consumption can be strong predictors of sleep quality, providing valuable insights for improving sleep health.
+
+**Generalization**: While the model performs well on both the training and test sets, there is a slight decrease in precision on the test set, suggesting that some predictions are more challenging. This is typical in real-world data, where the model may encounter new patterns not seen during training.
